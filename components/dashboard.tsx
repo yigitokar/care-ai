@@ -101,22 +101,26 @@ export default function Component() {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
-              >
-                <CameraIcon className="h-5 w-5" />
-                Fujifilm XT-30
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
-              >
-                <WebcamIcon className="h-5 w-5" />
-                Leica M8
-              </Button>
+              <Link href="/cameras/fujifilm-xt30">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
+                >
+                  <CameraIcon className="h-5 w-5" />
+                  Fujifilm XT-30
+                </Button>
+              </Link>
+              <Link href="/cameras/leica-m8">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
+                >
+                  <WebcamIcon className="h-5 w-5" />
+                  Leica M8
+                </Button>
+              </Link>
             </div>
             <div className="mt-auto flex flex-col gap-2 px-2 py-4">
               <Button
