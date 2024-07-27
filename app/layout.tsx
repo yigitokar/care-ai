@@ -10,8 +10,8 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'Your App Name',
-  description: 'Description of your app',
+  title: 'CareAI',
+  description: 'Best way to interact with user manuals for any device.',
 }
 
 export default function RootLayout({

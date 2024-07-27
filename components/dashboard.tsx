@@ -18,12 +18,15 @@ export default function Component() {
   const [activeTab, setActiveTab] = useState("documentation")
   return (
     <div className="flex min-h-screen w-full flex-col bg-background">
-      <header className="sticky top-0 z-40 flex h-16 w-full shrink-0 items-center border-b bg-card px-4 md:px-6">
-        <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-          <ActivityIcon className="h-6 w-6" />
-          <span className="sr-only">Care AI</span>
-        </Link>
-        <nav className="flex flex-1 items-center justify-center">
+      <header className="sticky top-0 z-40 flex h-16 w-full shrink-0 items-center justify-between border-b bg-card px-4 md:px-6">
+        <div className="flex items-center">
+          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
+            <ActivityIcon className="h-6 w-6" />
+            <span className="sr-only">Care AI</span>
+          </Link>
+        </div>
+        
+        <nav className="flex items-center">
           <Tabs defaultValue="documentation" value={activeTab} onValueChange={setActiveTab} className="h-full">
             <TabsList className="h-full">
               <TabsTrigger value="documentation" className="h-full px-4 hover:bg-muted">
@@ -34,25 +37,26 @@ export default function Component() {
               </TabsTrigger>
             </TabsList>
           </Tabs>
-          <div className="flex items-center gap-4">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
-                  <img src="/placeholder.svg" width="40" height="40" alt="Avatar" className="rounded-full" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Sign Out</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
         </nav>
-      </header>
+        
+        <div className="flex items-center">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
+                <img src="/yigitbal.jpg" width="40" height="40" alt="Avatar" className="rounded-full" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Sign Out</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+</header>
       <div className="flex min-h-[calc(100vh_-_theme(spacing.16))]">
         <aside className="fixed inset-y-0 left-0 z-30 flex w-14 flex-col border-r bg-card sm:w-20 md:w-64">
           <div className="flex h-16 shrink-0 items-center justify-between px-4 sm:px-6">
@@ -75,22 +79,22 @@ export default function Component() {
                     className="flex w-full items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
                   >
                     <PlusIcon className="h-5 w-5" />
-                    <span>Add New</span>
+                    <span>Pick your camera</span>
                     <ChevronDownIcon className="ml-auto h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="w-48">
                   <DropdownMenuItem>
                     <CameraIcon className="mr-2 h-4 w-4" />
-                    Add Camera
+                    Fujifilm XT-30
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <CameraIcon className="mr-2 h-4 w-4" />
-                    Add Lens
+                    Leica M8
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <TriangleIcon className="mr-2 h-4 w-4" />
-                    Add Tripod
+                    <PlusIcon className="mr-2 h-4 w-4" />
+                    Add new
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -99,8 +103,8 @@ export default function Component() {
                 size="sm"
                 className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
               >
-                <LayoutDashboardIcon className="h-5 w-5" />
-                Documentation
+                <CameraIcon className="h-5 w-5" />
+                Fujifilm XT-30
               </Button>
               <Button
                 variant="ghost"
@@ -108,7 +112,7 @@ export default function Component() {
                 className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
               >
                 <WebcamIcon className="h-5 w-5" />
-                Chat
+                Leica M8
               </Button>
             </div>
             <div className="mt-auto flex flex-col gap-2 px-2 py-4">
