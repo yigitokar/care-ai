@@ -16,7 +16,7 @@ import { ChartTooltipContent, ChartTooltip, ChartContainer } from "@/components/
 
 
 
-export default function Component() {
+export default function Dashboard({ children }: { children: React.ReactNode }) {
   const [activeTab, setActiveTab] = useState("documentation")
   
   return (
@@ -28,20 +28,6 @@ export default function Component() {
             <span className="sr-only">Care AI</span>
           </Link>
         </div>
-        
-        <nav className="flex items-center">
-          <Tabs defaultValue="documentation" value={activeTab} onValueChange={setActiveTab} className="h-full">
-            <TabsList className="h-full">
-              <TabsTrigger value="documentation" className="h-full px-4 hover:bg-muted">
-                Documentation
-              </TabsTrigger>
-              <TabsTrigger value="chat" className="h-full px-4 hover:bg-muted">
-                Chat
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </nav>
-        
         <div className="flex items-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -74,33 +60,17 @@ export default function Component() {
           </div>
           <nav className="flex flex-1 flex-col overflow-y-auto px-2 py-4">
             <div className="flex flex-col gap-2">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex w-full items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
-                  >
-                    <PlusIcon className="h-5 w-5" />
-                    <span>Pick your camera</span>
-                    <ChevronDownIcon className="ml-auto h-4 w-4" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" className="w-48">
-                    <DropdownMenuItem >
-                    <CameraIcon className="mr-2 h-4 w-4" />
-                    Fujifilm XT-30
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <CameraIcon className="mr-2 h-4 w-4" />
-                    Leica M8
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <PlusIcon className="mr-2 h-4 w-4" />
-                    Add new
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+            <Link href="/">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
+                >
+                  <CameraIcon className="h-5 w-5" />
+                  Home
+                </Button>
+              </Link>
+
               <Link href="/cameras/fujifilm-xt30">
                 <Button
                   variant="ghost"
@@ -123,6 +93,33 @@ export default function Component() {
               </Link>
             </div>
             <div className="mt-auto flex flex-col gap-2 px-2 py-4">
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="flex w-full items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
+                  >
+                    <PlusIcon className="h-5 w-5" />
+                    <span>Add your camera</span>
+                    <ChevronDownIcon className="ml-auto h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-48">
+                    <DropdownMenuItem >
+                    <CameraIcon className="mr-2 h-4 w-4" />
+                    Fujifilm XT-30
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <CameraIcon className="mr-2 h-4 w-4" />
+                    Leica M8
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <PlusIcon className="mr-2 h-4 w-4" />
+                    Add new
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button
                 variant="ghost"
                 size="sm"
@@ -142,8 +139,8 @@ export default function Component() {
             </div>
           </nav>
         </aside>
-        <main className="flex-1 px-4 pt-4 sm:px-6 md:pt-6">
-          
+        <main className="flex-1 ml-14 sm:ml-20 md:ml-64 px-4 pt-4 sm:px-6 md:pt-6">
+          {children}
         </main>
       </div>
     </div>

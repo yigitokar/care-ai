@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
+import Dashboard from '@/components/dashboard'
+
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -21,13 +23,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body 
-        className={cn(
-          'antialiased',
-          manrope.variable
-        )}
-      >
-        {children}
+      <body>
+        <Dashboard>{children}</Dashboard>
       </body>
     </html>
   )
