@@ -13,18 +13,19 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { CartesianGrid, XAxis, Line, LineChart, Bar, BarChart, Pie, PieChart } from "recharts"
 import { ChartTooltipContent, ChartTooltip, ChartContainer } from "@/components/ui/chart"
+import { HomeIcon } from '@heroicons/react/24/solid';
+import { CameraIcon, VideoCameraIcon } from '@heroicons/react/24/solid';
 
 
 
 export default function Dashboard({ children }: { children: React.ReactNode }) {
-  const [activeTab, setActiveTab] = useState("documentation")
   
   return (
     <div className="flex min-h-screen w-full flex-col bg-background">
       <header className="sticky top-0 z-40 flex h-16 w-full shrink-0 items-center justify-between border-b bg-card px-4 md:px-6">
         <div className="flex items-center">
-          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-            <ActivityIcon className="h-6 w-6" />
+          <Link href="/" className="mr-6 hidden lg:flex" prefetch={false}>
+            <img src="/care-logo.png" alt="Care AI Logo" className="h-10 w-20 object-contain" />
             <span className="sr-only">Care AI</span>
           </Link>
         </div>
@@ -66,7 +67,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                   size="sm"
                   className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
                 >
-                  <CameraIcon className="h-5 w-5" />
+                  <HomeIcon className="h-5 w-5" />
                   Home
                 </Button>
               </Link>
@@ -87,7 +88,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                   size="sm"
                   className="flex items-center justify-start gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
                 >
-                  <WebcamIcon className="h-5 w-5" />
+                  <VideoCameraIcon className="h-5 w-5" />
                   Leica M8
                 </Button>
               </Link>
@@ -207,25 +208,6 @@ function BarchartChart(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLDivE
 }
 
 
-function CameraIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-      <circle cx="12" cy="13" r="3" />
-    </svg>
-  )
-}
 
 
 function ChevronDownIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
