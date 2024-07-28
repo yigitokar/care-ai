@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function FujifilmXT30Page() {
-  const [activeTab, setActiveTab] = useState('documentation')
+  const [activeTab, setActiveTab] = useState('chat')
 
   return (
     <div>
