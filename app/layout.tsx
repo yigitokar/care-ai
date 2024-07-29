@@ -3,6 +3,8 @@ import { Manrope } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
 import Dashboard from '@/components/dashboard'
+import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
+
 
 
 const manrope = Manrope({
